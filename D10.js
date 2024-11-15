@@ -324,24 +324,24 @@ const howManyDays = (date1) => {
 };
 
 console.log("---- ESERCIZIO F9 ------");
-console.log(howManyDays(1995-11-12));
+console.log(howManyDays(1995 - 11 - 12));
 
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
 function isTodayMyBirthday(dateBirthday) {
-      const now = new Date(dateBirthday);
-      const data = new Date();
-      if(now.getDate() === data.getDate()) {
-        console.log('Oggi è il tuo compleanno');
-      }
-      else {
-        console.log("oggi non è il tuo compleanno");
-      }
+  const now = new Date(dateBirthday);
+  const data = new Date();
+  if (now.getDate() === data.getDate()) {
+    console.log('Oggi è il tuo compleanno');
+  }
+  else {
+    console.log("oggi non è il tuo compleanno");
+  }
 }
 
 console.log("---- ESERCIZIO F10 ------");
-isTodayMyBirthday(2024-11-12);
+isTodayMyBirthday(2024 - 11 - 12);
 
 // Arrays & Oggetti
 
@@ -353,26 +353,26 @@ isTodayMyBirthday(2024-11-12);
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
 
-function deleteProp(obj,propDel) {
-    delete obj[propDel];
-    return obj;
-  }
-    
+function deleteProp(obj, propDel) {
+  delete obj[propDel];
+  return obj;
+}
+
 
 console.log("---- ESERCIZIO F11 ------");
-console.log(deleteProp(movies,"Poster"));
+console.log(deleteProp(movies, "Poster"));
 
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
 function newestMovie() {
   let obj = [];
-    for(let i = 0; i < movies.length; i++) {
-      if(movies[i].Year > 2060) {
-         obj.push(movies[i].Title);
-      }
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].Year > 2060) {
+      obj.push(movies[i].Title);
     }
-    return obj;
+  }
+  return obj;
 }
 
 console.log("---- ESERCIZIO F12 ------");
@@ -382,11 +382,11 @@ console.log(newestMovie());
   Scrivi una funzione chiamata countMovies che ritorna il 
   numero di film contenuti nell'array "movies" fornito.
 */
- function countMovies(array) {
+function countMovies(array) {
   return array.length;
- }
- console.log("---- ESERCIZIO F13 ------");
- console.log(countMovies(movies));
+}
+console.log("---- ESERCIZIO F13 ------");
+console.log(countMovies(movies));
 
 /* ESERCIZIO 14
   Scrivi una funzione chiamata "onlyTheYears" 
@@ -394,21 +394,21 @@ console.log(newestMovie());
 */
 function onlyTheYears() {
   let obj = []
-  for(let i = 0; i < movies.length; i++) {
-       obj.push(movies[i].Year);
-    }
-    return obj;
- }
- console.log("---- ESERCIZIO F4 ------");
- console.log(onlyTheYears());
-  
+  for (let i = 0; i < movies.length; i++) {
+    obj.push(movies[i].Year);
+  }
+  return obj;
+}
+console.log("---- ESERCIZIO F4 ------");
+console.log(onlyTheYears());
+
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
 */
- function onlyInLastMillennium() {
-  for(let i = 0; i < movies.length; i++) {
-    if(movies[i].Year < 1999) {
-       console.log(movies[i]);
+function onlyInLastMillennium() {
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].Year < 1999) {
+      console.log(movies[i]);
     }
   }
 }
@@ -419,10 +419,10 @@ onlyInLastMillennium();
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
 function sumAllTheYears() {
-  for(let i = 0; i < movies.length; i++) {
-       movies[i].Year += movies[i].Year;
-    }
-    console.log(movies.Year);
+  for (let i = 0; i < movies.length; i++) {
+    movies[i].Year += movies[i].Year;
+  }
+  console.log(movies.Year);
 }
 
 console.log("---- ESERCIZIO F16 ------");
@@ -432,12 +432,12 @@ sumAllTheYears();
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
 function searchByTitle(title) {
-  for(let i = 0; i < movies.length; i++) {
-    if(movies[i].Title === title) {
-       console.log(movies[i].Title);
-    }
-  }
+  return movies.filter((movie) => {
+    movie.Title.toLocaleLowerCase().includes(title.toLocaleLowerCase);
+    console.log(movie.Title);
+  });
 }
+
 
 console.log("---- ESERCIZIO F17 ------");
 searchByTitle('Lord of the Flies');
@@ -451,9 +451,9 @@ function searchAndDivide(string) {
     match: [],
     unmatch: []
   };
-  for(let i = 0; i < movies.length; i++) {
-    if(movies[i].Title === string) {
-       obj.match.push(movies[i].title);
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].Title === string) {
+      obj.match.push(movies[i].title);
     }
     else {
       obj.unmatch.push(movies[i].title);
@@ -471,8 +471,8 @@ console.log(searchAndDivide('Lord of the Flies'));
 */
 
 function removeIndex(numb) {
-    delete movies[numb].Title;
-    return movies[numb];
+  delete movies[numb].Title;
+  return movies[numb];
 }
 console.log("---- ESERCIZIO F19 ------");
 console.log(removeIndex(2));
@@ -486,7 +486,7 @@ console.log(removeIndex(2));
 
 console.log("---- ESERCIZIO F20 ------");
 function selectContainer() {
-    return document.getElementById("container");
+  return document.getElementById("container");
 }
 
 console.log(selectContainer());
@@ -508,7 +508,7 @@ console.log(selectTD());
 
 function selectAllTD() {
   const td = document.querySelectorAll('table td');
-  for(let i = 0; i < td.length; i++) {
+  for (let i = 0; i < td.length; i++) {
     console.log(td[i]);
   }
 }
@@ -519,10 +519,10 @@ selectAllTD();
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
 function redB() {
-    const link = document.querySelectorAll("a");
-    for(let i = 0; i < link.length; i++) {
-       link[i].style.backgroundColor = 'red';
-    }
+  const link = document.querySelectorAll("a");
+  for (let i = 0; i < link.length; i++) {
+    link[i].style.backgroundColor = 'red';
+  }
 }
 
 console.log("---- ESERCIZIO F23 ------");
@@ -533,11 +533,11 @@ redB();
 */
 
 function myList() {
-    const list = document.getElementById('myList');
-    const dataL = document.createElement('li');
-    dataL.innerText = "QUARTO";
-    console.log(dataL);
-    list.appendChild(dataL);
+  const list = document.getElementById('myList');
+  const dataL = document.createElement('li');
+  dataL.innerText = "QUARTO";
+  console.log(dataL);
+  list.appendChild(dataL);
 }
 
 console.log("---- ESERCIZIO F24 ------");
@@ -563,7 +563,7 @@ empytList();
 function addList() {
   const dataL = document.querySelectorAll('tr');
   dataL.forEach((element) => {
-    element.setAttribute("class","test");
+    element.setAttribute("class", "test");
   });
 }
 
