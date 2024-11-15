@@ -365,9 +365,9 @@ console.log(deleteProp(movies,"Poster"));
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
 function newestMovie() {
-  let obj = []
+  let obj = [];
     for(let i = 0; i < movies.length; i++) {
-      if(movies[i].Year < 2000) {
+      if(movies[i].Year > 2060) {
          obj.push(movies[i].Title);
       }
     }
@@ -557,12 +557,14 @@ empytList();
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 
-function empytList() {
+function addList() {
   const dataL = document.querySelectorAll('tr');
   dataL.forEach((element) => {
     element.setAttribute("class","test");
   });
 }
+
+addList();
 
 // [EXTRA] JS Avanzato
 
