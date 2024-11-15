@@ -353,11 +353,10 @@ isTodayMyBirthday(2024-11-12);
 */
 
 function deleteProp(obj,propDel) {
-  for(let i = 0; i < obj.length; i++) {
-    delete obj[i].propDel;
-  }
+    delete obj[propDel];
     return obj;
-}
+  }
+    
 
 console.log("---- ESERCIZIO F11 ------");
 console.log(deleteProp(movies,"Poster"));
